@@ -1,3 +1,4 @@
+import { Input } from "@/components/input";
 import { Label } from "@/components/label";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/tabs";
 import { Textarea } from "@/components/textarea";
@@ -7,7 +8,6 @@ interface ChartTypesProps {
   setDataTab: (tab: string) => void;
   dataText: string;
   setDataText: (text: string) => void;
-  file: File | null;
   handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -16,7 +16,6 @@ export function ChartDataField({
   setDataTab,
   dataText,
   setDataText,
-  file,
   handleFileChange,
 }: ChartTypesProps) {
   return (
@@ -32,26 +31,21 @@ export function ChartDataField({
           </TabsTrigger>
         </TabsList>
         <TabsContent value="upload">
-          <label htmlFor="data-file" className="block text-sm font-medium mb-1">
+          <Label htmlFor="data-file" className="mb-2">
             Upload CSV or JSON
-          </label>
-          <input
+          </Label>
+          <Input
             id="data-file"
             type="file"
             accept=".csv,application/json"
-            className="w-full text-sm"
+            className="bg-background"
             onChange={handleFileChange}
           />
-          {file && (
-            <div className="text-xs text-gray-500 mt-1 truncate">
-              Selected: {file.name}
-            </div>
-          )}
         </TabsContent>
         <TabsContent value="paste">
-          <label htmlFor="data-text" className="block text-sm font-medium mb-1">
+          <Label htmlFor="data-text" className="mb-2">
             Paste Data (CSV or JSON)
-          </label>
+          </Label>
           <Textarea
             id="data-text"
             placeholder="Paste CSV or JSON data here"

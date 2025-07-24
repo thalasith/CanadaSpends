@@ -26,22 +26,11 @@ type ChartPreviewProps = {
 };
 
 export function ChartPreview({ chartType, title, data }: ChartPreviewProps) {
-  // Fade-in animation on update
-  const [fade, setFade] = React.useState(false);
-  React.useEffect(() => {
-    setFade(false);
-    const timeout = setTimeout(() => setFade(true), 10);
-    return () => clearTimeout(timeout);
-  }, [chartType, title, data]);
-
-  // Helper: check if data is array of objects with a given key
   const hasKey = (arr: ChartData[], key: string) =>
     Array.isArray(arr) && arr.length > 0 && arr[0][key] !== undefined;
 
   return (
-    <div
-      className={`transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-0"}`}
-    >
+    <div>
       <H3>{title}</H3>
       <div className="h-80 w-full">
         {chartType === "bar" &&
