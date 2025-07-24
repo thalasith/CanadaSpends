@@ -13,78 +13,84 @@ import {
   YAxis,
   CartesianGrid,
 } from "recharts";
+import { H3 } from "@/components/Layout";
 
-const sampleBarLineData = [
-  { name: "A", value: 30, value2: 20 },
-  { name: "B", value: 20, value2: 27 },
-  { name: "C", value: 50, value2: 34 },
-];
-const samplePieData = [
-  { name: "A", value: 30 },
-  { name: "B", value: 20 },
-  { name: "C", value: 50 },
-];
-const sampleScatterData = [
-  { x: 10, y: 30 },
-  { x: 20, y: 20 },
-  { x: 30, y: 50 },
-  { x: 40, y: 40 },
-];
 const COLORS = ["#2563eb", "#f59e42", "#10b981", "#e11d48"];
+
+type ChartData = Record<string, unknown>;
 
 type ChartPreviewProps = {
   chartType: string;
   title: string;
+  data: ChartData[];
 };
 
-export function ChartPreview({ chartType, title }: ChartPreviewProps) {
+export function ChartPreview({ chartType, title, data }: ChartPreviewProps) {
   // Fade-in animation on update
   const [fade, setFade] = React.useState(false);
   React.useEffect(() => {
     setFade(false);
     const timeout = setTimeout(() => setFade(true), 10);
     return () => clearTimeout(timeout);
-  }, [chartType, title]);
+  }, [chartType, title, data]);
+
+  // Helper: check if data is array of objects with a given key
+  const hasKey = (arr: ChartData[], key: string) =>
+    Array.isArray(arr) && arr.length > 0 && arr[0][key] !== undefined;
 
   return (
     <div
       className={`transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-0"}`}
     >
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
+      <H3>{title}</H3>
       <div className="h-80 w-full">
-        {chartType === "bar" && (
+        {chartType === "bar" &&
+        hasKey(data, "Ministry") &&
+        hasKey(data, "Total Spending (B)") ? (
           <BarChartComponent
-            data={sampleBarLineData}
-            index="name"
-            categories={["value", "value2"]}
+            data={data}
+            index="Ministry"
+            categories={["Total Spending (B)"]}
             showLegend={true}
             showGridLines={true}
           />
-        )}
-        {chartType === "line" && (
+        ) : chartType === "bar" ? (
+          <pre className="text-xs text-gray-500 bg-gray-100 p-2 rounded">
+            {JSON.stringify(data, null, 2)}
+          </pre>
+        ) : null}
+        {chartType === "line" &&
+        hasKey(data, "Ministry") &&
+        hasKey(data, "Total Spending (B)") ? (
           <LineChartComponent
-            data={sampleBarLineData}
-            index="name"
-            categories={["value", "value2"]}
+            data={data}
+            index="Ministry"
+            categories={["Total Spending (B)"]}
             showLegend={true}
             showGridLines={true}
           />
-        )}
-        {chartType === "pie" && (
+        ) : chartType === "line" ? (
+          <pre className="text-xs text-gray-500 bg-gray-100 p-2 rounded">
+            {JSON.stringify(data, null, 2)}
+          </pre>
+        ) : null}
+        {chartType === "pie" &&
+        hasKey(data, "Ministry") &&
+        hasKey(data, "Total Spending (B)") ? (
           <ResponsiveContainer width="100%" height="100%">
             <RechartsPieChart>
               <RechartsTooltip />
               <Pie
-                data={samplePieData}
-                dataKey="value"
-                nameKey="name"
+                data={data}
+                dataKey="Total Spending (B)"
+                nameKey="Ministry"
                 cx="50%"
                 cy="50%"
                 outerRadius={80}
                 fill="#8884d8"
                 label
               >
-                {samplePieData.map((entry, index) => (
+                {data.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
                     fill={COLORS[index % COLORS.length]}
@@ -93,18 +99,26 @@ export function ChartPreview({ chartType, title }: ChartPreviewProps) {
               </Pie>
             </RechartsPieChart>
           </ResponsiveContainer>
-        )}
-        {chartType === "scatter" && (
+        ) : chartType === "pie" ? (
+          <pre className="text-xs text-gray-500 bg-gray-100 p-2 rounded">
+            {JSON.stringify(data, null, 2)}
+          </pre>
+        ) : null}
+        {chartType === "scatter" && hasKey(data, "x") && hasKey(data, "y") ? (
           <ResponsiveContainer width="100%" height="100%">
             <RechartsScatterChart>
               <CartesianGrid />
               <XAxis dataKey="x" type="number" />
               <YAxis dataKey="y" type="number" />
               <RechartsTooltip cursor={{ strokeDasharray: "3 3" }} />
-              <Scatter data={sampleScatterData} fill="#2563eb" />
+              <Scatter data={data} fill="#2563eb" />
             </RechartsScatterChart>
           </ResponsiveContainer>
-        )}
+        ) : chartType === "scatter" ? (
+          <pre className="text-xs text-gray-500 bg-gray-100 p-2 rounded">
+            {JSON.stringify(data, null, 2)}
+          </pre>
+        ) : null}
       </div>
     </div>
   );
