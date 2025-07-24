@@ -1,5 +1,6 @@
 import { ToggleGroup, ToggleGroupItem } from "@/components/toggle-group";
 import { BarChart, LineChart, PieChart, ScatterChart } from "lucide-react";
+import { Label } from "@/components/label";
 
 const chartTypes = [
   { label: "Bar Chart", value: "bar", icon: BarChart },
@@ -16,8 +17,8 @@ export function ChartTypeField({
   setChartType: (chartType: string) => void;
 }) {
   return (
-    <div>
-      <label className="block text-sm font-medium mb-1">Chart Type</label>
+    <div className="flex flex-col gap-2">
+      <Label>Chart Type</Label>
       <ToggleGroup
         type="single"
         value={chartType}

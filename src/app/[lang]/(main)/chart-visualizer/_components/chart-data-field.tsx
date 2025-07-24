@@ -1,3 +1,4 @@
+import { Label } from "@/components/label";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/tabs";
 
 interface ChartTypesProps {
@@ -18,10 +19,8 @@ export const ChartDataField = ({
   handleFileChange,
 }: ChartTypesProps) => {
   return (
-    <div>
-      <label htmlFor="chart-type" className="block text-sm font-medium mb-1">
-        Chart Data
-      </label>
+    <div className="flex flex-col gap-2">
+      <Label htmlFor="chart-type">Chart Data</Label>
       <Tabs value={dataTab} onValueChange={setDataTab} className="w-full">
         <TabsList className="w-full mb-2">
           <TabsTrigger value="upload" className="flex-1">

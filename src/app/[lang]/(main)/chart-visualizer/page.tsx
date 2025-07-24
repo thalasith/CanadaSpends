@@ -5,6 +5,8 @@ import { Button } from "@/components/button";
 import React, { useState } from "react";
 import { ChartDataField } from "./_components/chart-data-field";
 import { ChartTypeField } from "./_components/chart-type-field";
+import { Input } from "@/components/input";
+import { Label } from "@/components/label";
 
 export default function ChartVisualizerPage() {
   const [title, setTitle] = useState("");
@@ -35,17 +37,12 @@ export default function ChartVisualizerPage() {
             <h2 className="text-xl font-semibold mb-4">Configuration</h2>
             <form className="flex flex-col gap-4">
               {/* Chart Title */}
-              <div>
-                <label
-                  htmlFor="chart-title"
-                  className="block text-sm font-medium mb-1"
-                >
-                  Chart Title
-                </label>
-                <input
+              <div className="flex flex-col gap-2">
+                <Label htmlFor="chart-title">Chart Title</Label>
+                <Input
                   id="chart-title"
                   type="text"
-                  className="w-full border rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="bg-white"
                   placeholder="Enter chart title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
