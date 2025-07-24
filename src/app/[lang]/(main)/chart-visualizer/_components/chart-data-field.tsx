@@ -11,14 +11,14 @@ interface ChartTypesProps {
   handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const ChartDataField = ({
+export function ChartDataField({
   dataTab,
   setDataTab,
   dataText,
   setDataText,
   file,
   handleFileChange,
-}: ChartTypesProps) => {
+}: ChartTypesProps) {
   return (
     <div className="flex flex-col gap-2">
       <Label htmlFor="chart-type">Chart Data</Label>
@@ -63,4 +63,4 @@ export const ChartDataField = ({
       </Tabs>
     </div>
   );
-};
+}

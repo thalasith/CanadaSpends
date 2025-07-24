@@ -3,17 +3,18 @@
 import { H1, PageContent, Section } from "@/components/Layout";
 import { Button } from "@/components/button";
 import React, { useState } from "react";
-import { ChartDataField } from "./_components/chart-data-field";
-import { ChartTypeField } from "./_components/chart-type-field";
+import { ChartDataField, ChartTypeField, ChartPreview } from "./_components";
 import { Input } from "@/components/input";
 import { Label } from "@/components/label";
 
 export default function ChartVisualizerPage() {
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState("My Chart");
   const [chartType, setChartType] = useState("bar");
   const [dataText, setDataText] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [dataTab, setDataTab] = useState("upload");
+  // Use defaultData as the initial chart data
+  const [chartData] = useState();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -71,9 +72,11 @@ export default function ChartVisualizerPage() {
           {/* Right column: Chart Preview (2/3) */}
           <div className="md:w-2/3 w-full bg-white p-4 rounded shadow min-h-[300px]">
             <h2 className="text-xl font-semibold mb-4">Preview</h2>
-            <div className="text-gray-400 italic">
-              Chart preview will appear here
-            </div>
+            <ChartPreview
+              chartType={chartType}
+              title={title}
+              data={chartData}
+            />
           </div>
         </div>
       </Section>
