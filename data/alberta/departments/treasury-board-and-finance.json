@@ -1,0 +1,36 @@
+{
+  "name": "Treasury Board and Finance",
+  "totalSpending": 4200000000,
+  "totalSpendingFormatted": "$4.2B",
+  "percentage": 5.49,
+  "percentageFormatted": "5.5%",
+  "categories": [
+    {
+      "name": "Financial Management",
+      "amount": 2500000000
+    },
+    {
+      "name": "Economic Analysis and Policy",
+      "amount": 1700000000
+    }
+  ],
+  "spending_data": {
+    "name": "Treasury Board and Finance",
+    "children": [
+      {
+        "name": "Financial Management",
+        "amount": 2500000000
+      },
+      {
+        "name": "Economic Analysis and Policy",
+        "amount": 1700000000
+      }
+    ]
+  },
+  "generatedAt": "2024-12-19T12:00:00.000Z",
+  "introText": "Treasury Board and Finance manages Alberta's finances, economic policy, and government operations to ensure fiscal responsibility and economic growth.",
+  "descriptionText": "The Ministry of Treasury Board and Finance oversees the province's financial management, budget development, economic analysis, debt management, and banking services. The ministry also provides corporate services to government and manages government facilities.",
+  "roleText": "Treasury Board and Finance develops fiscal policy, manages provincial finances, provides economic analysis and forecasting, oversees government operations, and ensures transparent and accountable financial management.",
+  "programsHeading": "Financial and Economic Management",
+  "programsDescription": "The ministry manages provincial budgeting and financial reporting, debt and investment management, economic research and analysis, government banking services, risk management, and corporate services including procurement and real estate management."
+} 

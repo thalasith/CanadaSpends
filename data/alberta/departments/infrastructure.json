@@ -1,0 +1,36 @@
+{
+  "name": "Infrastructure",
+  "totalSpending": 8500000000,
+  "totalSpendingFormatted": "$8.5B",
+  "percentage": 11.11,
+  "percentageFormatted": "11.1%",
+  "categories": [
+    {
+      "name": "Transportation Infrastructure",
+      "amount": 5100000000
+    },
+    {
+      "name": "Public Works",
+      "amount": 3400000000
+    }
+  ],
+  "spending_data": {
+    "name": "Infrastructure",
+    "children": [
+      {
+        "name": "Transportation Infrastructure",
+        "amount": 5100000000
+      },
+      {
+        "name": "Public Works",
+        "amount": 3400000000
+      }
+    ]
+  },
+  "generatedAt": "2024-12-19T12:00:00.000Z",
+  "introText": "Alberta Infrastructure builds and maintains the public infrastructure that supports communities and enables economic growth across the province.",
+  "descriptionText": "The Ministry of Infrastructure is responsible for planning, building, and maintaining government infrastructure including transportation networks, public buildings, water and wastewater systems, and other critical infrastructure that serves Albertans.",
+  "roleText": "Alberta Infrastructure manages capital planning and construction, maintains government facilities, oversees major infrastructure projects, and ensures public infrastructure meets the needs of growing communities while supporting economic development.",
+  "programsHeading": "Infrastructure Programs and Projects",
+  "programsDescription": "Alberta Infrastructure manages programs for highway construction and maintenance, bridge infrastructure, public building construction and maintenance, water infrastructure, and strategic infrastructure planning to support population and economic growth."
+} 

@@ -1,0 +1,36 @@
+{
+  "name": "Community and Social Services",
+  "totalSpending": 6800000000,
+  "totalSpendingFormatted": "$6.8B",
+  "percentage": 8.89,
+  "percentageFormatted": "8.9%",
+  "categories": [
+    {
+      "name": "Income Support",
+      "amount": 4200000000
+    },
+    {
+      "name": "Child Services",
+      "amount": 2600000000
+    }
+  ],
+  "spending_data": {
+    "name": "Community and Social Services",
+    "children": [
+      {
+        "name": "Income Support",
+        "amount": 4200000000
+      },
+      {
+        "name": "Child Services",
+        "amount": 2600000000
+      }
+    ]
+  },
+  "generatedAt": "2024-12-19T12:00:00.000Z",
+  "introText": "Community and Social Services supports vulnerable Albertans and families by providing income support, child intervention services, and programs that help people achieve independence.",
+  "descriptionText": "The Ministry of Community and Social Services provides a safety net for Albertans in need through income support programs, child intervention services, services for persons with disabilities, and prevention programs that help families and individuals build resilience.",
+  "roleText": "Community and Social Services develops and delivers programs that protect children, support families in crisis, provide income assistance to those in need, and help Albertans with disabilities participate fully in their communities.",
+  "programsHeading": "Social Support Programs",
+  "programsDescription": "The ministry delivers income support through Alberta Works and AISH, child intervention services, supports for persons with disabilities, prevention and early intervention programs, and family support services to help Albertans achieve stability and independence."
+} 

@@ -1,0 +1,131 @@
+{
+  "name": "Alberta",
+  "financialYear": "2023-24",
+  "source": "https://www.alberta.ca/public-accounts",
+  "totalProvincialSpending": 76.5,
+  "totalProvincialSpendingFormatted": "$76.5B",
+  "totalEmployees": 28000,
+  "ministries": [
+    {
+      "name": "Health",
+      "slug": "health",
+      "totalSpending": 25.2,
+      "totalSpendingFormatted": "$25.2B",
+      "percentage": 32.94,
+      "percentageFormatted": "32.9%"
+    },
+    {
+      "name": "Education",
+      "slug": "education",
+      "totalSpending": 15.8,
+      "totalSpendingFormatted": "$15.8B",
+      "percentage": 20.65,
+      "percentageFormatted": "20.7%"
+    },
+    {
+      "name": "Infrastructure",
+      "slug": "infrastructure",
+      "totalSpending": 8.5,
+      "totalSpendingFormatted": "$8.5B",
+      "percentage": 11.11,
+      "percentageFormatted": "11.1%"
+    },
+    {
+      "name": "Community and Social Services",
+      "slug": "community-and-social-services",
+      "totalSpending": 6.8,
+      "totalSpendingFormatted": "$6.8B",
+      "percentage": 8.89,
+      "percentageFormatted": "8.9%"
+    },
+    {
+      "name": "Treasury Board and Finance",
+      "slug": "treasury-board-and-finance",
+      "totalSpending": 4.2,
+      "totalSpendingFormatted": "$4.2B",
+      "percentage": 5.49,
+      "percentageFormatted": "5.5%"
+    },
+    {
+      "name": "Energy and Minerals",
+      "slug": "energy-and-minerals",
+      "totalSpending": 3.1,
+      "totalSpendingFormatted": "$3.1B",
+      "percentage": 4.05,
+      "percentageFormatted": "4.1%"
+    },
+    {
+      "name": "Agriculture and Irrigation",
+      "slug": "agriculture-and-irrigation",
+      "totalSpending": 2.4,
+      "totalSpendingFormatted": "$2.4B",
+      "percentage": 3.14,
+      "percentageFormatted": "3.1%"
+    },
+    {
+      "name": "Justice and Solicitor General",
+      "slug": "justice-and-solicitor-general",
+      "totalSpending": 2.1,
+      "totalSpendingFormatted": "$2.1B",
+      "percentage": 2.75,
+      "percentageFormatted": "2.8%"
+    },
+    {
+      "name": "Environment and Protected Areas",
+      "slug": "environment-and-protected-areas",
+      "totalSpending": 1.8,
+      "totalSpendingFormatted": "$1.8B",
+      "percentage": 2.35,
+      "percentageFormatted": "2.4%"
+    },
+    {
+      "name": "Advanced Education",
+      "slug": "advanced-education",
+      "totalSpending": 1.6,
+      "totalSpendingFormatted": "$1.6B",
+      "percentage": 2.09,
+      "percentageFormatted": "2.1%"
+    },
+    {
+      "name": "Transportation and Economic Corridors",
+      "slug": "transportation-and-economic-corridors",
+      "totalSpending": 1.4,
+      "totalSpendingFormatted": "$1.4B",
+      "percentage": 1.83,
+      "percentageFormatted": "1.8%"
+    },
+    {
+      "name": "Municipal Affairs",
+      "slug": "municipal-affairs",
+      "totalSpending": 1.2,
+      "totalSpendingFormatted": "$1.2B",
+      "percentage": 1.57,
+      "percentageFormatted": "1.6%"
+    },
+    {
+      "name": "Indigenous Relations",
+      "slug": "indigenous-relations",
+      "totalSpending": 0.9,
+      "totalSpendingFormatted": "$0.9B",
+      "percentage": 1.18,
+      "percentageFormatted": "1.2%"
+    },
+    {
+      "name": "Seniors, Community and Social Services",
+      "slug": "seniors-community-and-social-services",
+      "totalSpending": 0.7,
+      "totalSpendingFormatted": "$0.7B",
+      "percentage": 0.92,
+      "percentageFormatted": "0.9%"
+    },
+    {
+      "name": "Culture and Status of Women",
+      "slug": "culture-and-status-of-women",
+      "totalSpending": 0.5,
+      "totalSpendingFormatted": "$0.5B",
+      "percentage": 0.65,
+      "percentageFormatted": "0.7%"
+    }
+  ],
+  "generatedAt": "2024-12-19T12:00:00.000Z"
+} 

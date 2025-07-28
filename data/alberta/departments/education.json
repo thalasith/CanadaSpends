@@ -1,0 +1,36 @@
+{
+  "name": "Education",
+  "totalSpending": 15800000000,
+  "totalSpendingFormatted": "$15.8B",
+  "percentage": 20.65,
+  "percentageFormatted": "20.7%",
+  "categories": [
+    {
+      "name": "Elementary & Secondary Education",
+      "amount": 13200000000
+    },
+    {
+      "name": "School Infrastructure",
+      "amount": 2600000000
+    }
+  ],
+  "spending_data": {
+    "name": "Education",
+    "children": [
+      {
+        "name": "Elementary & Secondary Education",
+        "amount": 13200000000
+      },
+      {
+        "name": "School Infrastructure",
+        "amount": 2600000000
+      }
+    ]
+  },
+  "generatedAt": "2024-12-19T12:00:00.000Z",
+  "introText": "Alberta Education is committed to ensuring all Alberta students have access to quality education that prepares them for success in life and work.",
+  "descriptionText": "The Ministry of Education is responsible for early childhood development, kindergarten to Grade 12 education, and career and technology studies. The ministry sets curriculum standards, provides funding to school authorities, and ensures educational excellence across Alberta.",
+  "roleText": "Alberta Education develops education policy, curriculum, and standards; provides funding and support to school authorities; oversees teacher certification; and works to ensure all students have opportunities to reach their full potential.",
+  "programsHeading": "Education Programs and Services",
+  "programsDescription": "Alberta Education oversees programs including curriculum development, student assessment, teacher professional development, inclusive education supports, First Nations, Métis and Inuit education, and early childhood development initiatives."
+} 

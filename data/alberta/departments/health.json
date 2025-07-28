@@ -1,0 +1,36 @@
+{
+  "name": "Health",
+  "totalSpending": 25200000000,
+  "totalSpendingFormatted": "$25.2B",
+  "percentage": 32.94,
+  "percentageFormatted": "32.9%",
+  "categories": [
+    {
+      "name": "Healthcare Services",
+      "amount": 21500000000
+    },
+    {
+      "name": "Public Health",
+      "amount": 3700000000
+    }
+  ],
+  "spending_data": {
+    "name": "Health",
+    "children": [
+      {
+        "name": "Healthcare Services",
+        "amount": 21500000000
+      },
+      {
+        "name": "Public Health",
+        "amount": 3700000000
+      }
+    ]
+  },
+  "generatedAt": "2024-12-19T12:00:00.000Z",
+  "introText": "Alberta Health is responsible for ensuring Albertans have access to quality healthcare services and promoting public health across the province.",
+  "descriptionText": "The Ministry of Health oversees Alberta's publicly funded healthcare system, working with Alberta Health Services and other partners to deliver comprehensive healthcare to all Albertans. This includes hospital care, primary care, continuing care, and public health programs.",
+  "roleText": "Alberta Health sets health policy, legislation, and standards; provides funding and oversight of health services; and works to improve health outcomes for all Albertans. The ministry ensures healthcare services are accessible, appropriate, and sustainable.",
+  "programsHeading": "Key Health Programs and Services",
+  "programsDescription": "Alberta Health funds and oversees a wide range of healthcare programs including acute care services, primary healthcare, mental health and addiction services, continuing care, pharmaceutical programs, and public health initiatives to protect and promote the health of Albertans."
+} 
