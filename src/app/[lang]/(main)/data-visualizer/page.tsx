@@ -263,17 +263,85 @@ export default function DataVisualizerPage() {
     }
   };
 
+  const downloadChartForSharing = async (): Promise<boolean> => {
+    if (!chartRef.current) return false;
+
+    try {
+      const svgElement = chartRef.current.querySelector("svg");
+      if (svgElement) {
+        const svgRect = svgElement.getBoundingClientRect();
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        if (!ctx) return false;
+
+        canvas.width = svgRect.width;
+        canvas.height = svgRect.height;
+        ctx.fillStyle = "white";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const svgData = new XMLSerializer().serializeToString(svgElement);
+        const svgDataUrl = "data:image/svg+xml;base64," + btoa(svgData);
+
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.onload = () => {
+            ctx.drawImage(img, 0, 0);
+
+            // Download the image
+            const link = document.createElement("a");
+            const filename = `${sanitizeFilename(title)}-chart.png`;
+            link.download = filename;
+            link.href = canvas.toDataURL("image/png");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            resolve(true);
+          };
+
+          img.onerror = () => resolve(false);
+          img.src = svgDataUrl;
+        });
+      }
+      return false;
+    } catch (error) {
+      console.error("Error generating chart image:", error);
+      return false;
+    }
+  };
+
   const handleShareChart = async (platform: "twitter" | "linkedin") => {
-    const url = window.location.href;
+    // Use production URL instead of local development URL
+    const productionUrl = `https://canadaspends.com/en/data-visualizer`;
     const text = `Check out this chart: ${title} - Created with Canada Spends Data Visualizer`;
 
     try {
+      // Download chart image first
+      const imageDownloaded = await downloadChartForSharing();
+
       if (platform === "twitter") {
-        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(productionUrl)}`;
         window.open(twitterUrl, "_blank");
+
+        if (imageDownloaded) {
+          setTimeout(() => {
+            alert(
+              "Chart image downloaded! You can now attach it to your X post for better engagement.",
+            );
+          }, 1000);
+        }
       } else if (platform === "linkedin") {
-        const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+        const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(productionUrl)}&title=${encodeURIComponent(title)}&summary=${encodeURIComponent(text)}`;
         window.open(linkedinUrl, "_blank");
+
+        if (imageDownloaded) {
+          setTimeout(() => {
+            alert(
+              "Chart image downloaded! You can now attach it to your LinkedIn post for better engagement.",
+            );
+          }, 1000);
+        }
       }
     } catch (error) {
       console.error("Share failed:", error);
