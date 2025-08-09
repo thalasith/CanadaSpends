@@ -56,17 +56,70 @@ export const convertResultsToCsv = (results: SearchResult[]): string => {
   return csvRows.join("\n");
 };
 
-// Minimal CSV parser for simple CSV files (no advanced quoting/escaping)
+// Improved CSV parser that handles quoted fields
 export function parseCSV(csv: string): Record<string, unknown>[] {
-  const lines = csv.trim().split(/\r?\n/);
+  const lines = csv
+    .trim()
+    .split(/\r?\n/)
+    .filter((line) => line.trim());
   if (lines.length < 2) return [];
-  const headers = lines[0].split(",").map((h) => h.trim());
-  return lines.slice(1).map((line) => {
-    const values = line.split(",").map((v) => v.trim());
-    const obj: Record<string, unknown> = {};
-    headers.forEach((header, i) => {
-      obj[header] = String(values[i] !== undefined ? values[i] : "");
-    });
-    return obj;
-  });
+
+  // Parse CSV line with proper quote handling
+  const parseLine = (line: string): string[] => {
+    const result: string[] = [];
+    let current = "";
+    let inQuotes = false;
+
+    for (let i = 0; i < line.length; i++) {
+      const char = line[i];
+      const nextChar = line[i + 1];
+
+      if (char === '"') {
+        if (inQuotes && nextChar === '"') {
+          // Escaped quote
+          current += '"';
+          i++; // Skip next quote
+        } else {
+          // Toggle quote state
+          inQuotes = !inQuotes;
+        }
+      } else if (char === "," && !inQuotes) {
+        // Field separator
+        result.push(current.trim());
+        current = "";
+      } else {
+        current += char;
+      }
+    }
+
+    // Add the last field
+    result.push(current.trim());
+    return result;
+  };
+
+  const headers = parseLine(lines[0]).map((h) =>
+    h.replace(/^"|"$/g, "").trim(),
+  );
+
+  return lines
+    .slice(1)
+    .map((line, lineIndex) => {
+      try {
+        const values = parseLine(line);
+        const obj: Record<string, unknown> = {};
+        headers.forEach((header, i) => {
+          let value = values[i] !== undefined ? values[i] : "";
+          // Remove surrounding quotes if present
+          value = value.replace(/^"|"$/g, "").trim();
+          // Try to convert numbers
+          const numValue = parseFloat(value);
+          obj[header] = !isNaN(numValue) && value !== "" ? numValue : value;
+        });
+        return obj;
+      } catch {
+        console.warn(`Error parsing line ${lineIndex + 2}:`, line);
+        return {};
+      }
+    })
+    .filter((obj) => Object.keys(obj).length > 0);
 }

@@ -1,13 +1,13 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 
-interface ChartTypesProps {
+interface ChartDataFieldProps {
   dataTab: string;
   setDataTab: (tab: string) => void;
   dataText: string;
   setDataText: (text: string) => void;
+  file: File | null;
   handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -16,33 +16,44 @@ export function ChartDataField({
   setDataTab,
   dataText,
   setDataText,
+  file,
   handleFileChange,
-}: ChartTypesProps) {
+}: ChartDataFieldProps) {
   return (
     <div className="flex flex-col gap-2">
-      <Label htmlFor="chart-type">Chart Data</Label>
-      <Tabs value={dataTab} onValueChange={setDataTab} className="w-full">
-        <TabsList className="w-full mb-2 bg-muted">
-          <TabsTrigger value="upload" className="flex-1">
-            Upload File
-          </TabsTrigger>
-          <TabsTrigger value="paste" className="flex-1">
-            Paste Data
-          </TabsTrigger>
-        </TabsList>
-        <TabsContent value="upload">
+      <Label htmlFor="data-method">Data Input Method</Label>
+      <select
+        id="data-method"
+        value={dataTab}
+        onChange={(e) => setDataTab(e.target.value)}
+        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+      >
+        <option value="upload">Upload File</option>
+        <option value="paste">Paste Data</option>
+      </select>
+
+      {dataTab === "upload" && (
+        <div className="mt-2">
           <Label htmlFor="data-file" className="mb-2">
             Upload CSV or JSON
           </Label>
           <Input
             id="data-file"
             type="file"
-            accept=".csv,application/json"
+            accept=".csv,.json,application/json,text/csv"
             className="bg-background"
             onChange={handleFileChange}
           />
-        </TabsContent>
-        <TabsContent value="paste">
+          {file && (
+            <div className="mt-2 p-2 bg-blue-50 border border-blue-200 rounded text-sm text-blue-700">
+              📁 Selected: {file.name} ({(file.size / 1024).toFixed(1)} KB)
+            </div>
+          )}
+        </div>
+      )}
+
+      {dataTab === "paste" && (
+        <div className="mt-2">
           <Label htmlFor="data-text" className="mb-2">
             Paste Data (CSV or JSON)
           </Label>
@@ -53,8 +64,8 @@ export function ChartDataField({
             value={dataText}
             onChange={(e) => setDataText(e.target.value)}
           />
-        </TabsContent>
-      </Tabs>
+        </div>
+      )}
     </div>
   );
 }
