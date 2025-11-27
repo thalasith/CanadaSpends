@@ -1,166 +1,131 @@
 {
-  "total": -0.8879999999999999,
-  "spending": 10.692,
-  "revenue": 9.804,
+  "total": 0.9619999999999997,
+  "spending": 8.714,
+  "revenue": 9.676,
   "spending_data": {
     "name": "Spending",
     "children": [
       {
-        "name": "Expenditure",
+        "name": "General Administration",
         "children": [
           {
-            "name": "General Administration",
-            "children": [
-              {
-                "name": "Municipal administration less Eliminations",
-                "amount": 0.81
-              }
-            ]
+            "name": "Municipal administration",
+            "amount": 0.82
           },
           {
-            "name": "Public Security",
-            "children": [
-              {
-                "name": "Municipal administration less Eliminations",
-                "amount": 1.364
-              }
-            ]
-          },
-          {
-            "name": "Transportation",
-            "children": [
-              {
-                "name": "Municipal administration less Eliminations",
-                "amount": 1.528
-              },
-              {
-                "name": "Controlled Organizations",
-                "amount": 2.085
-              }
-            ]
-          },
-          {
-            "name": "Environmental Hygiene",
-            "children": [
-              {
-                "name": "Municipal administration less Eliminations",
-                "amount": 0.685
-              }
-            ]
-          },
-          {
-            "name": "Health and Welfare",
-            "children": [
-              {
-                "name": "Municipal administration less Eliminations",
-                "amount": 0.256
-              },
-              {
-                "name": "Controlled Organizations",
-                "amount": 0.078
-              }
-            ]
-          },
-          {
-            "name": "Urban planning and Development",
-            "children": [
-              {
-                "name": "Municipal administration less Eliminations",
-                "amount": 0.327
-              },
-              {
-                "name": "Controlled Organizations",
-                "amount": 0.003
-              }
-            ]
-          },
-          {
-            "name": "Recreation and Culture",
-            "children": [
-              {
-                "name": "Municipal administration less Eliminations",
-                "amount": 0.923
-              },
-              {
-                "name": "Controlled Organizations",
-                "amount": 0.084
-              }
-            ]
-          },
-          {
-            "name": "Financing Expenses",
-            "children": [
-              {
-                "name": "Municipal administration less Eliminations",
-                "amount": 0.376
-              },
-              {
-                "name": "Controlled Organizations",
-                "amount": 0.196
-              }
-            ]
+            "name": "Eliminations",
+            "amount": -0.009
           }
         ]
       },
       {
-        "name": "Non-Tangible Capital Assets",
+        "name": "Public Security",
         "children": [
           {
-            "name": "Change in assets held for sale",
-            "amount": 0.038
+            "name": "Municipal administration",
+            "amount": 1.365
           },
           {
-            "name": "Change in inventories",
-            "amount": 0.014
-          },
-          {
-            "name": "Change in other non-financial assets",
-            "amount": 0.139
-          },
-          {
-            "name": "Net remeasurement losses for the year",
-            "amount": 0.004
+            "name": "Eliminations",
+            "amount": -0.001
           }
         ]
       },
       {
-        "name": "Tangible Capital Assets",
+        "name": "Transportation",
         "children": [
           {
-            "name": "Infrastructures",
-            "amount": 0.832
+            "name": "Municipal administration",
+            "amount": 1.69
           },
           {
-            "name": "Metro System - Infrastructures",
-            "amount": 0.438
+            "name": "Controlled Organizations",
+            "amount": 2.085
           },
           {
-            "name": "Metro System - Tunnels",
-            "amount": 0.004
+            "name": "Eliminations",
+            "amount": -0.162
+          }
+        ]
+      },
+      {
+        "name": "Environmental Hygiene",
+        "children": [
+          {
+            "name": "Municipal administration",
+            "amount": 0.686
           },
           {
-            "name": "Buildings",
-            "amount": 0.34
+            "name": "Eliminations",
+            "amount": -0.001
+          }
+        ]
+      },
+      {
+        "name": "Health and Welfare",
+        "children": [
+          {
+            "name": "Municipal administration",
+            "amount": 0.276
           },
           {
-            "name": "Leasehold Improvements",
-            "amount": 0.019
+            "name": "Controlled Organizations",
+            "amount": 0.078
           },
           {
-            "name": "Office furniture and equipment",
-            "amount": 0.016
+            "name": "Eliminations",
+            "amount": -0.021
+          }
+        ]
+      },
+      {
+        "name": "Urban Planning and Development",
+        "children": [
+          {
+            "name": "Municipal administration",
+            "amount": 0.33
           },
           {
-            "name": "Machinery, tools and equipment",
-            "amount": 0.011
+            "name": "Controlled Organizations",
+            "amount": 0.003
           },
           {
-            "name": "Land",
-            "amount": 0.113
+            "name": "Eliminations",
+            "amount": -0.003
+          }
+        ]
+      },
+      {
+        "name": "Recreation and Culture",
+        "children": [
+          {
+            "name": "Municipal administration",
+            "amount": 0.963
           },
           {
-            "name": "Other",
-            "amount": 0.009
+            "name": "Controlled Organizations",
+            "amount": 0.084
+          },
+          {
+            "name": "Eliminations",
+            "amount": -0.04
+          }
+        ]
+      },
+      {
+        "name": "Financing Expenses",
+        "children": [
+          {
+            "name": "Municipal administration",
+            "amount": 0.431
+          },
+          {
+            "name": "Controlled Organizations",
+            "amount": 0.196
+          },
+          {
+            "name": "Eliminations",
+            "amount": -0.056
           }
         ]
       }
@@ -201,7 +166,7 @@
         "name": "Transfers",
         "children": [
           {
-            "name": "Operating Activities",
+            "name": "Transfers for Operating Activities",
             "children": [
               {
                 "name": "Government of Canada",
@@ -218,66 +183,23 @@
             ]
           },
           {
-            "name": "Investing Activities",
+            "name": "Transfers for Investing Activities",
             "children": [
               {
                 "name": "Government of Canada",
-                "children": [
-                  {
-                    "name": "Gas tax program and the Quebec government contribution",
-                    "amount": 0.072
-                  },
-                  {
-                    "name": "Canada transfer programs - Quebec",
-                    "amount": 0.017
-                  },
-                  {
-                    "name": "Canada transfer programs - Municipality",
-                    "amount": 0.004
-                  },
-                  {
-                    "name": "Other",
-                    "amount": 0.017
-                  }
-                ]
+                "amount": 0.109
               },
               {
                 "name": "Government of Quebec",
-                "children": [
-                  {
-                    "name": "Government public transit assistance program",
-                    "amount": 0.321
-                  },
-                  {
-                    "name": "Gas tax program and the Quebec government contribution",
-                    "amount": 0.155
-                  },
-                  {
-                    "name": "Government Assistance Program for public transit infrastructure",
-                    "amount": 0.004
-                  },
-                  {
-                    "name": "Canada transfer programs - Quebec",
-                    "amount": 0.017
-                  },
-                  {
-                    "name": "Quebec transfer programs - Municipality",
-                    "amount": 0.065
-                  }
-                ]
+                "amount": 0.557
+              },
+              {
+                "name": "Communaute metropolitaine de Montreal",
+                "amount": 0.001
               },
               {
                 "name": "Other",
-                "children": [
-                  {
-                    "name": "Communaute metropolitaine de Montreal",
-                    "amount": 0.001
-                  },
-                  {
-                    "name": "Other",
-                    "amount": 0.001
-                  }
-                ]
+                "amount": 0.004
               }
             ]
           }
@@ -306,32 +228,6 @@
           {
             "name": "Interest on cash and other interest",
             "amount": 0.059
-          }
-        ]
-      },
-      {
-        "name": "Tangible Capital Assets",
-        "children": [
-          {
-            "name": "Proceeds from disposal",
-            "amount": 0.006
-          },
-          {
-            "name": "Loss on disposal / write-off",
-            "amount": 0.024
-          },
-          {
-            "name": "Amortization",
-            "children": [
-              {
-                "name": "Vehicles",
-                "amount": 0.062
-              },
-              {
-                "name": "Metro cars",
-                "amount": 0.035
-              }
-            ]
           }
         ]
       }
